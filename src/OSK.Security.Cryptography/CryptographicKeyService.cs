@@ -10,7 +10,7 @@ namespace OSK.Security.Cryptography
     {
         #region ICryptographicKeyService
 
-        public TKeyInformation KeyInformation { get; internal set; }
+        public TKeyInformation KeyInformation { get; internal protected set; }
 
         public abstract ValueTask<byte[]> DecryptAsync(byte[] data, CancellationToken cancellationToken = default);
         public abstract ValueTask<byte[]> EncryptAsync(byte[] data, CancellationToken cancellationToken = default);
