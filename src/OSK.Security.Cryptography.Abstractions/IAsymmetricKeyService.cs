@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace OSK.Security.Cryptography.Abstractions
 {
     public interface IAsymmetricKeyService<TKeyInformation> : ICryptographicKeyService<TKeyInformation>
-        where TKeyInformation: AsymmetricKeyInformation
+        where TKeyInformation: IAsymmetricKeyInformation
     {
         ValueTask<byte[]> SignAsync(byte[] data, HashAlgorithmName hashAlgorithmName, CancellationToken cancellationToken = default);
 

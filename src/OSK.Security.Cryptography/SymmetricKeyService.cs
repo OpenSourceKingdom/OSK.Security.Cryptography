@@ -3,11 +3,7 @@
 namespace OSK.Security.Cryptography
 {
     public abstract class SymmetricKeyService<TKeyInformation> : CryptographicKeyService<TKeyInformation>, ISymmetricKeyService<TKeyInformation>
-        where TKeyInformation : SymmetricKeyInformation
+        where TKeyInformation : class, ISymmetricKeyInformation
     {
-        protected SymmetricKeyService(TKeyInformation keyInformation)
-            : base(keyInformation)
-        {
-        }
     }
 }
