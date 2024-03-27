@@ -6,17 +6,8 @@ using System.Threading.Tasks;
 namespace OSK.Security.Cryptography
 {
     public abstract class AsymmetricKeyService<TKeyInformation> : CryptographicKeyService<TKeyInformation>, IAsymmetricKeyService<TKeyInformation>
-        where TKeyInformation : AsymmetricKeyInformation
+        where TKeyInformation : class, IAsymmetricKeyInformation
     {
-        #region Constructors
-
-        protected AsymmetricKeyService(TKeyInformation keyInformation)
-            : base(keyInformation)
-        {
-        }
-
-        #endregion
-
         #region IAsymmetricKey
 
         public abstract ValueTask<byte[]> SignAsync(byte[] data, HashAlgorithmName hashAlgorithmName, CancellationToken cancellationToken = default);

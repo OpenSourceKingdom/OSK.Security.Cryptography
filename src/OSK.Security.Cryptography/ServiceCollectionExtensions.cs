@@ -8,7 +8,7 @@ namespace OSK.Security.Cryptography
     {
         public static IServiceCollection AddSymmetricKeyService<TCryptographicKeyService, TKeyInformation>(this IServiceCollection services)
             where TCryptographicKeyService : SymmetricKeyService<TKeyInformation>
-            where TKeyInformation : SymmetricKeyInformation
+            where TKeyInformation : class, ISymmetricKeyInformation
         {
             services.TryAddTransient<SymmetricKeyService<TKeyInformation>, TCryptographicKeyService>();
 
@@ -17,7 +17,7 @@ namespace OSK.Security.Cryptography
 
         public static IServiceCollection AddAsymmetricKeyService<TCryptographicKeyService, TKeyInformation>(this IServiceCollection services)
             where TCryptographicKeyService : AsymmetricKeyService<TKeyInformation>
-            where TKeyInformation : AsymmetricKeyInformation
+            where TKeyInformation : class, IAsymmetricKeyInformation
         {
             services.TryAddTransient<AsymmetricKeyService<TKeyInformation>, TCryptographicKeyService>();
 
