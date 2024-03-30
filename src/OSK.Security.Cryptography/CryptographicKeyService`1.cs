@@ -7,7 +7,7 @@ namespace OSK.Security.Cryptography
     {
         #region ICryptographicKeyService
 
-        public TKeyInformation KeyInformation { get; internal protected set; }
+        public TKeyInformation KeyInformation { get; protected internal set; }
 
         public virtual void Dispose()
         {
