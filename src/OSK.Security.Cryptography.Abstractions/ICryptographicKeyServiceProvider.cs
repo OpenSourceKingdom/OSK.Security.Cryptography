@@ -7,5 +7,7 @@
 
         IAsymmetricKeyService<TKeyInformation> GetAsymmetricKeyService<TKeyInformation>(TKeyInformation keyInformation)
             where TKeyInformation : class, IAsymmetricKeyInformation;
+
+        ICryptographicKeyService GetKeyService(ICryptographicKeyInformation keyInformation);
     }
 }
