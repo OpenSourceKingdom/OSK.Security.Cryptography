@@ -20,6 +20,7 @@ namespace OSK.Security.Cryptography
         {
             services.AddCryptography();
             services.TryAddTransient<SymmetricKeyService<TKeyInformation>, TCryptographicKeyService>();
+            services.AddTransient<CryptographicKeyService, TCryptographicKeyService>();
 
             return services;
         }
@@ -30,6 +31,7 @@ namespace OSK.Security.Cryptography
         {
             services.AddCryptography();
             services.TryAddTransient<AsymmetricKeyService<TKeyInformation>, TCryptographicKeyService>();
+            services.AddTransient<CryptographicKeyService, TCryptographicKeyService>();
 
             return services;
         }
