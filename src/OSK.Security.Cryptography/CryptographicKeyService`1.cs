@@ -19,7 +19,7 @@ namespace OSK.Security.Cryptography
 
         #region Helpers
 
-        public override bool TrySetKeyInformation(ICryptographicKeyInformation keyInformation)
+        protected internal override bool TrySetKeyInformation(ICryptographicKeyInformation keyInformation)
         {
             if (keyInformation is TKeyInformation typedKeyInformation)
             {

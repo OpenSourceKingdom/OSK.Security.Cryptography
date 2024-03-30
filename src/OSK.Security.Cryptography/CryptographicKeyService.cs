@@ -12,7 +12,11 @@ namespace OSK.Security.Cryptography
 
         public abstract ValueTask<byte[]> EncryptAsync(byte[] data, CancellationToken cancellationToken = default);
 
-        public abstract bool TrySetKeyInformation(ICryptographicKeyInformation keyInformation);
+        #endregion
+
+        #region Helpers
+
+        protected internal abstract bool TrySetKeyInformation(ICryptographicKeyInformation keyInformation);
 
         #endregion
     }

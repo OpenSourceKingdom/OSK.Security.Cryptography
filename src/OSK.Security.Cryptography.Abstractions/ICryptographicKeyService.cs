@@ -8,7 +8,5 @@ namespace OSK.Security.Cryptography.Abstractions
         ValueTask<byte[]> EncryptAsync(byte[] data, CancellationToken cancellationToken = default);
 
         ValueTask<byte[]> DecryptAsync(byte[] data, CancellationToken cancellationToken = default);
-
-        bool TrySetKeyInformation(ICryptographicKeyInformation keyInformation);
     }
 }

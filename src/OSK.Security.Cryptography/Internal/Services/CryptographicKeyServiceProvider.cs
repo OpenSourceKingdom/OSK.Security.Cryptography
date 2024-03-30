@@ -60,7 +60,7 @@ namespace OSK.Security.Cryptography.Internal.Services
                 throw new ArgumentNullException(nameof(keyInformation));
             }
 
-            var keyServices = _serviceProvider.GetRequiredService<IEnumerable<ICryptographicKeyService>>();
+            var keyServices = _serviceProvider.GetRequiredService<IEnumerable<CryptographicKeyService>>();
             var selectedKeyService = keyServices.FirstOrDefault(keyService => keyService.TrySetKeyInformation(keyInformation));
             if (selectedKeyService == null)
             {
