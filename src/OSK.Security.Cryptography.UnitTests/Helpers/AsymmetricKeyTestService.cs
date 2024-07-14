@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography;
+﻿using OSK.Security.Cryptography.Abstractions;
 
 namespace OSK.Security.Cryptography.UnitTests.Helpers
 {
@@ -14,12 +14,12 @@ namespace OSK.Security.Cryptography.UnitTests.Helpers
             throw new NotImplementedException();
         }
 
-        public override ValueTask<byte[]> SignAsync(byte[] data, HashAlgorithmName hashAlgorithmName, CancellationToken cancellationToken = default)
+        public override ValueTask<byte[]> SignAsync(byte[] data, CryptographicSigningAlgorithm signingAlgorithm, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
 
-        public override ValueTask<bool> ValidateSignatureAsync(byte[] data, byte[] signedData, HashAlgorithmName hashAlgorithmName, CancellationToken cancellationToken = default)
+        public override ValueTask<bool> ValidateSignatureAsync(byte[] data, byte[] signedData, CryptographicSigningAlgorithm signingAlgorithm, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
