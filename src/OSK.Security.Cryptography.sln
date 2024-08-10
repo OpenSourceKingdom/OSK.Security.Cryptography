@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSK.Security.Cryptography.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSK.Security.Cryptography", "OSK.Security.Cryptography\OSK.Security.Cryptography.csproj", "{31BB46BA-18FB-4860-8313-F7F4806C8F0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSK.Security.Cryptography.UnitTests", "OSK.Security.Cryptography.UnitTests\OSK.Security.Cryptography.UnitTests.csproj", "{591BA75C-186C-45B6-B1F1-8373E675F645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSK.Security.Cryptography.UnitTests", "OSK.Security.Cryptography.UnitTests\OSK.Security.Cryptography.UnitTests.csproj", "{591BA75C-186C-45B6-B1F1-8373E675F645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSK.Security.Cryptography.Abstractions.UnitTests", "OSK.Security.Cryptography.Abstractions.UnitTests\OSK.Security.Cryptography.Abstractions.UnitTests.csproj", "{9759F535-3BC0-45D7-B973-5411043B918C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{591BA75C-186C-45B6-B1F1-8373E675F645}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{591BA75C-186C-45B6-B1F1-8373E675F645}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{591BA75C-186C-45B6-B1F1-8373E675F645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9759F535-3BC0-45D7-B973-5411043B918C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9759F535-3BC0-45D7-B973-5411043B918C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9759F535-3BC0-45D7-B973-5411043B918C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9759F535-3BC0-45D7-B973-5411043B918C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

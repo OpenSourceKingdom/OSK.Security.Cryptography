@@ -37,7 +37,7 @@ namespace OSK.Security.Cryptography
                 return;
             }
 
-            var supportedAlgorithm = SupportedSigningAlgorithms.FirstOrDefault(alg => alg.AlgorithmName.Equals(signingAlgorithm.AlgorithmName, StringComparison.OrdinalIgnoreCase));
+            var supportedAlgorithm = SupportedSigningAlgorithms.FirstOrDefault(alg => alg == signingAlgorithm);
             if (supportedAlgorithm == null)
             {
                 throw new ArgumentException($"The specified signing algorithm, {signingAlgorithm.AlgorithmName}, is not supported by key service of type {GetType().FullName}." +
