@@ -1,8 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using OSK.Hexagonal.MetaData;
 
 namespace OSK.Security.Cryptography.Abstractions
 {
+    [HexagonalPort(HexagonalPort.Secondary)]
     public interface IAsymmetricKeyService<TKeyInformation> : ICryptographicKeyService<TKeyInformation>
         where TKeyInformation: IAsymmetricKeyInformation
     {
