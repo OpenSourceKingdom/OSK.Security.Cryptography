@@ -33,6 +33,7 @@ namespace OSK.Security.Cryptography.Internal.Services
                 throw new ArgumentNullException(nameof(keyInformation));
             }
 
+
             var keyService = _serviceProvider.GetRequiredService<AsymmetricKeyService<TKeyInformation>>();
             keyService.KeyInformation = keyInformation;
 
@@ -60,14 +61,21 @@ namespace OSK.Security.Cryptography.Internal.Services
                 throw new ArgumentNullException(nameof(keyInformation));
             }
 
-            var keyServices = _serviceProvider.GetRequiredService<IEnumerable<CryptographicKeyService>>();
-            var selectedKeyService = keyServices.FirstOrDefault(keyService => keyService.TrySetKeyInformation(keyInformation));
-            if (selectedKeyService == null)
+            var keyDescriptors = _serviceProvider.GetRequiredService<IEnumerable<CryptographicKeyDescriptor>>();
+            var keyType = keyInformation.GetType();
+            var selectedKeyDescriptor = keyDescriptors.FirstOrDefault(descriptor => descriptor.KeyInformationType == keyType);
+            if (selectedKeyDescriptor == null)
             {
-                throw new InvalidOperationException($"No registered cryptographic key service could handle key information of type {keyInformation.GetType()}. Are you missing a dependency injection?");
+                throw new InvalidOperationException($"No registered cryptographic key service could handle key information of type {keyType.FullName}. Are you missing a dependency injection?");
             }
 
-            return selectedKeyService;
+            var keyService = (ICryptographicKeyService)_serviceProvider.GetService(selectedKeyDescriptor.KeyServiceType);
+            if (keyService is CryptographicKeyService cryptographicKeyService && !cryptographicKeyService.TrySetKeyInformation(keyInformation))
+            {
+                throw new InvalidOperationException($"An unexpected error occurred when attempting to set the key information, of type {keyType.FullName}, to the key service, of type {selectedKeyDescriptor.KeyServiceType.FullName}.");
+            }
+
+            return keyService;
         }
 
         #endregion

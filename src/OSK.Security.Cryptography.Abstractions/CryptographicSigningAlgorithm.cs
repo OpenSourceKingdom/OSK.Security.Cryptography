@@ -3,6 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace OSK.Security.Cryptography.Abstractions
 {
+    /// <summary>
+    /// A strongly typed way of describing signing algorithms. These can be unique per cryptographic algorithm.
+    /// </summary>
     public readonly struct CryptographicSigningAlgorithm : IEquatable<CryptographicSigningAlgorithm>
     {
         #region Variables

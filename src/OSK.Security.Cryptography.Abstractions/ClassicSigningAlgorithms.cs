@@ -1,5 +1,8 @@
 ﻿namespace OSK.Security.Cryptography.Abstractions
 {
+    /// <summary>
+    /// A set of classic signing algorithms for use with cryptographic signing functions.
+    /// </summary>
     public static class ClassicSigningAlgorithms
     {
         //
