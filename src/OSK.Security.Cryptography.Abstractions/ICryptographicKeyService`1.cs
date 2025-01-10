@@ -3,7 +3,7 @@ using OSK.Hexagonal.MetaData;
 
 namespace OSK.Security.Cryptography.Abstractions
 {
-    [HexagonalPort(HexagonalPort.Secondary)]
+    [HexagonalIntegration(HexagonalIntegrationType.IntegrationRequired)]
     public interface ICryptographicKeyService<TKeyInformation> : ICryptographicKeyService, IDisposable
         where TKeyInformation : ICryptographicKeyInformation
     {

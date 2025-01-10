@@ -7,7 +7,7 @@ namespace OSK.Security.Cryptography.Abstractions
     /// and should not be shared. If key informations should be shared, please use <see cref="GetPublicKeyInformation"/>
     /// </summary>
     /// <typeparam name="TPublicKeyInformation">The type of public key information that is used to initialize the associated cryptographic key service</typeparam>
-    [HexagonalPort(HexagonalPort.Secondary)]
+    [HexagonalIntegration(HexagonalIntegrationType.IntegrationRequired)]
     public interface ICryptographicKeyInformation<TPublicKeyInformation>: ICryptographicKeyInformation
         where TPublicKeyInformation : IPublicKeyInformation
     {

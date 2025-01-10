@@ -5,7 +5,7 @@ namespace OSK.Security.Cryptography.Abstractions
     /// <summary>
     /// A set of key information specific to asymmetric cryptographic algorithms
     /// </summary>
-    [HexagonalPort(HexagonalPort.Secondary)]
+    [HexagonalIntegration(HexagonalIntegrationType.IntegrationRequired)]
     public interface IAsymmetricKeyInformation : ICryptographicKeyInformation
     {
     }

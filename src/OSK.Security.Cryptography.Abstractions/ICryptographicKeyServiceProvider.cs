@@ -5,7 +5,7 @@ namespace OSK.Security.Cryptography.Abstractions
     /// <summary>
     /// The core accessor to the cryptographic key algorithms. The provider is meant to retrieve and initialize key information for any key service requested
     /// </summary>
-    [HexagonalPort(HexagonalPort.Primary)]
+    [HexagonalIntegration(HexagonalIntegrationType.LibraryProvided, HexagonalIntegrationType.ConsumerPointOfEntry)]
     public interface ICryptographicKeyServiceProvider
     {
         /// <summary>
